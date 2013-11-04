@@ -12,7 +12,7 @@ include BuildKeyblocks
 collection = []
 keysize = 16
 
-File.open("gist-prob8.txt", "r") do |infile|
+File.open("gist-prob8.gist", "r") do |infile|
     while line = infile.gets do
         #Decode each line
         line = line.strip.decode_hex

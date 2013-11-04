@@ -16,7 +16,7 @@ include Decrypt_XOR
 gistIn, gistOut, keys = {}, {}, {}
 keyspace = Key.new.alpha_num
 #Read in lines from file
-File.open("gist-prob4.txt","r") do |infile|
+File.open("gist-prob4.gist","r") do |infile|
   while (line = infile.gets)  
     gistIn[line.strip.decode_hex] = 0
   end

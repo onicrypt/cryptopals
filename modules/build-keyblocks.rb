@@ -1,12 +1,17 @@
 module BuildKeyblocks
-  def build_keyblocks(cipher, keyLength)
+  def build_keyblocks(cipher, blockLength)
     index = 0
     keyblocks = []
-    while ( (index*keyLength) + keyLength ) < cipher.bytesize do
-      block = cipher.byteslice(index*keyLength, keyLength)
+    cipherLength = cipher.bytesize
+    blockCount = (cipherLength / Float(blockLength)).ceil
+    
+    while index < blockCount do
+      blockIndex = index * blockLength
+      block = cipher.byteslice(blockIndex, blockLength)
       keyblocks.push(block) unless block.eql?nil
       index += 1
     end
+    
     keyblocks
   end 
 end
