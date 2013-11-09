@@ -18,13 +18,13 @@ end
 
 cipher = OpenSSL::Cipher::AES.new(128, :ECB)
 cipher.encrypt
-#cipher.padding = 0
-key = "YELLOW SUBMARINE"
+cipher.padding = 0
+cipher.key = "YELLOW SUBMARINE"
 cipherIV = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
 
 decipher = OpenSSL::Cipher::AES.new(128, :ECB)
 decipher.decrypt
-decipher.key = key 
+decipher.key = "YELLOW SUBMARINE"
 decipher.padding = 0
 decipherIV = cipherIV 
 
@@ -45,5 +45,4 @@ puts("Encrypted text: #{encrypted}")
 ##Decryption
 decrypted = encrypted.cbc_decrypt(decipher, decipherIV, blockLength)
 puts("Clear text: #{decrypted}") 
-str1 = "fucking what is goinlmlmlmlmlml"
-print("Test Blocks: #{str1.pkcs7_pad(blockLength)}\n")
+str1 = "fucking what"

@@ -3,7 +3,7 @@ module AES_CBC
     ##Encryption
     clearLine   = self.pkcs7_pad( blockLength )
     clearBlocks = build_keyblocks( clearLine, blockLength )
-    cipherText, encrypted = "", ""
+    cipherText, encrypted = String.new(""), String.new("")
   
     clearBlocks.each_with_index { |plainChunk, i|
       cbcIn     = plainChunk.fixed_xor( iv ) if i == 0
@@ -16,7 +16,7 @@ module AES_CBC
   
   def cbc_decrypt(cipher, iv, blockLength)
     ##Decryption
-    cipherStr    = self.pkcs7_pad( blockLength )
+    cipherStr    = self
     cipherBlocks = build_keyblocks( cipherStr, blockLength )
     clearText    = ""
   
