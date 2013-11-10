@@ -29,20 +29,20 @@ decipher.padding = 0
 decipherIV = cipherIV 
 
 digest = []
-File.open("test-prob10.test", "r") do |infile|
+File.open("gist-prob10.gist", "r") do |infile|
   while line = infile.gets do
     digest.push( line )#.strip )
   end
 end
 
-clearLine = digest.join
+#clearLine = digest.join
+encrypted = digest.join
 blockLength = 16
 
 ##Encryption
-encrypted = clearLine.cbc_encrypt(cipher, cipherIV, blockLength)
-puts("Encrypted text: #{encrypted}") 
+#encrypted = clearLine.cbc_encrypt(cipher, cipherIV, blockLength)
+#puts("Encrypted text: #{encrypted}") 
 
 ##Decryption
 decrypted = encrypted.cbc_decrypt(decipher, decipherIV, blockLength)
-puts("Clear text: #{decrypted}") 
-str1 = "fucking what"
+puts("Clear text: \n#{decrypted}") 
