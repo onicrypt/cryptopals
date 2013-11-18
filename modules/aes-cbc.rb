@@ -18,7 +18,7 @@ module AES_CBC
     ##Decryption
     cipherStr    = self
     cipherBlocks = build_keyblocks( cipherStr, blockLength )
-    clearText    = ""
+    clearText    = String.new("")
   
     cipherBlocks.each_with_index { |cipherChunk, i|
       cbcOut    = cipher.update( cipherChunk )

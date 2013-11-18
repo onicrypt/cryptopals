@@ -31,7 +31,7 @@ decipherIV = cipherIV
 digest = []
 File.open("gist-prob10.gist", "r") do |infile|
   while line = infile.gets do
-    digest.push( line )#.strip )
+    digest.push( line.strip.decode_base64 )
   end
 end
 
