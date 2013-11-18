@@ -40,5 +40,6 @@ module AES_EXTENDS
 	block = block.cbc_encrypt( cipher, k, length )
       end
     }
+    blocks.join
   end
 end
