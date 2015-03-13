@@ -2,7 +2,6 @@
 path = File.expand_path("../", __FILE__)
 
 require "openssl" 
-require path + "/../modules/hex-b64.rb"
 require path + "/../modules/hex-b64.rb" 
 require path + "/../modules/pkcs7.rb" 
 require path + "/../modules/build-keyblocks.rb" 
