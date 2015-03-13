@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby 
+path = File.expand_path("../", __FILE__)
 
-require "./modules/hex-b64.rb" 
-require "./modules/build-keyblocks.rb"
+require path + "/../modules/hex-b64.rb" 
+require path + "/../modules/build-keyblocks.rb"
 
 class String
     include HexBase64

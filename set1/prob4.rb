@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
+path = File.expand_path("../", __FILE__)
 
-require "./modules/hex-b64.rb"
-require "./modules/keygen.rb"
-require "./modules/sc-xor.rb"
-require "./modules/decrypt-xor.rb"
+require path + "/../modules/hex-b64.rb"
+require path + "/../modules/keygen.rb"
+require path + "/../modules/sc-xor.rb"
+require path + "/../modules/decrypt-xor.rb"
 
 class String
   include HexBase64 

@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require "./modules/hex-b64.rb"
+path = File.expand_path("../", __FILE__)
+require path + "/../modules/hex-b64.rb"
 
 class String
   include HexBase64

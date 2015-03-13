@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby 
+path = File.expand_path("../", __FILE__)
 
 require "openssl" 
-require "./modules/hex-b64.rb" 
-require "./modules/pkcs7.rb" 
-require "./modules/build-keyblocks.rb" 
-require "./modules/fixed-xor.rb" 
-require "./modules/aes-cbc.rb" 
+require path + "/../modules/hex-b64.rb" 
+require path + "/../modules/pkcs7.rb" 
+require path + "/../modules/build-keyblocks.rb" 
+require path + "/../modules/fixed-xor.rb" 
+require path + "/../modules/aes-cbc.rb" 
 
 include BuildKeyblocks
 
@@ -20,7 +21,7 @@ cipher = OpenSSL::Cipher::AES.new(128, :ECB)
 cipher.encrypt
 cipher.padding = 0
 cipher.key = "YELLOW SUBMARINE"
-cipherIV = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+cipherIV = "\x00" * 16
 
 decipher = OpenSSL::Cipher::AES.new(128, :ECB)
 decipher.decrypt
